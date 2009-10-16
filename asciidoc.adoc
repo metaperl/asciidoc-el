@@ -259,4 +259,3 @@ in the next paragraph I refer to it:
 
 Here is <<LL,Cool J>> at your service.
 
-
