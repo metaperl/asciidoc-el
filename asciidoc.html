@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.2.2" />
+<style type="text/css">
+/* Debug borders */
+p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
+/*
+  border: 1px solid red;
+*/
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+tt {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  border-bottom: 2px solid silver;
+  padding-top: 0.5em;
+}
+
+div.sectionbody {
+  font-family: serif;
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revision {
+  font-family: sans-serif;
+}
+
+div#footer {
+  font-family: sans-serif;
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble,
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-right: 10%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+
+div.listingblock {
+  margin-right: 0%;
+}
+div.listingblock > div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock > div.content {
+  padding-left: 2.0em;
+}
+
+div.attribution {
+  text-align: right;
+}
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 2px solid silver;
+}
+
+div.exampleblock > div.content {
+  border-left: 2px solid silver;
+  padding: 0.5em;
+}
+
+div.verseblock div.content {
+  white-space: pre;
+}
+
+div.imageblock div.content { padding-left: 0; }
+div.imageblock img { border: 1px solid silver; }
+span.image img { border-style: none; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: italic;
+}
+dd > *:first-child {
+  margin-top: 0;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.olist2 {
+  list-style-type: lower-alpha;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+tfoot {
+  font-weight: bold;
+}
+
+div.hlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hlist td {
+  padding-bottom: 5px;
+}
+td.hlist1 {
+  vertical-align: top;
+  font-style: italic;
+  padding-right: 0.8em;
+}
+td.hlist2 {
+  vertical-align: top;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+/* Workarounds for IE6's broken and incomplete CSS2. */
+
+div.sidebar-content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+div.sidebar-title, div.image-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0.0em;
+  margin-bottom: 0.5em;
+}
+
+div.listingblock div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock-content {
+  padding-left: 2.0em;
+}
+
+div.exampleblock-content {
+  border-left: 2px solid silver;
+  padding-left: 0.5em;
+}
+
+/* IE6 sets dynamically generated links as visited. */
+div#toc a:visited { color: blue; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){generateToc(4)}
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, October 2006. License: GPL */
+
+function getText(el) {
+  var text = "";
+  for (var i = el.firstChild; i != null; i = i.nextSibling) {
+    if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+      text += i.data;
+    else if (i.firstChild != null)
+      text += getText(i);
+  }
+  return text;
+}
+
+function TocEntry(el, text, toclevel) {
+  this.element = el;
+  this.text = text;
+  this.toclevel = toclevel;
+}
+
+function tocEntries(el, toclevels) {
+  var result = new Array;
+  var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+  // Function that scans the DOM tree for header elements (the DOM2
+  // nodeIterator API would be a better technique but not supported by all
+  // browsers).
+  var iterate = function (el) {
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+        var mo = re.exec(i.tagName)
+        if (mo)
+          result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+        iterate(i);
+      }
+    }
+  }
+  iterate(el);
+  return result;
+}
+
+// This function does the work. toclevels = 1..4.
+function generateToc(toclevels) {
+  var toc = document.getElementById("toc");
+  var entries = tocEntries(document.getElementsByTagName("body")[0], toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "toc" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+}
+/*]]>*/
+</script>
+<title>asciidoc.el - asciidoc functions for Emacs</title>
+</head>
+<body>
+<div id="header">
+<h1>asciidoc.el - asciidoc functions for Emacs</h1>
+<span id="author">Terrence Brannon</span><br />
+<span id="email"><tt>&lt;<a href="mailto:bauhaus@metaperl.com">bauhaus@metaperl.com</a>&gt;</tt></span><br />
+09/03/07
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<h2>1. Get Started</h2>
+<div class="sectionbody">
+<p><tt>M-x asciidoc-get-started</tt> will insert the document header stuff for you.</p>
+</div>
+<h2>2. Run asciidoc</h2>
+<div class="sectionbody">
+<p><tt>M-x asciidoc-compile</tt> will supply you with an editable command line to be
+supplied to the shell. After that you can simply type <tt>M-x recompile</tt> to build
+your document each time.</p>
+</div>
+<h2>3. Sections</h2>
+<div class="sectionbody">
+<p>Sections are entered with <tt>asciidoc-section-title</tt>. You enter a
+number indicating the number of equals signs you want. And then
+you enter the section title.</p>
+<p>I'm sorry that I cannot two-line titles. The main reason is that I
+think it is much more flexible to just be able to remove an equals
+sign to change level rather than try to keep all the various underline
+semantics in my head.</p>
+</div>
+<h2>4. Text Formatting</h2>
+<div class="sectionbody">
+<h3>4.1. Emphasized text</h3>
+<p><tt>M-x asciidoc-emphasized RET You must mop the floor now!</tt> will result
+in <em>You must mop the floor now!</em> Which is just what we need in this house.</p>
+<h3>4.2. Strong (bold) text</h3>
+<p><tt>M-x asciidoc-emphasized RET My name is Hercules</tt> yields <strong>My name is Hercules</strong> and that is strong enough for the best of us.</p>
+<h3>4.3. Monospaced text</h3>
+<p><tt>M-x asciidoc-monospace RET Welcome to nerdville</tt> produces <tt>Welcome to
+nerdville</tt> and that is boring enough for the rest of us.</p>
+<h3>4.4. Quoted text</h3>
+<p><tt>M-x asciidoc-quoted RET Let's get physical</tt> brings us &#8220;Let's get physical&#8221; and who could ask for more?</p>
+<h3>4.5. Unquoted text</h3>
+<p><tt>M-x asciidoc-unquoted RET who needs this?</tt> yields who needs this?</p>
+<h3>4.6. Superscripted text</h3>
+<p>Normal and then <tt>M-x asciidoc-superscript RET super text RET M-x asciidoc-subscript down text RET</tt> yields:</p>
+<div class="title">Result</div>
+<p>Normal and then <sup>super text</sup> Jules Verne <sub>under the sea</sub></p>
+<h3>4.7. Copyright, Trademark.</h3>
+<div class="title">M-x asciidoc-copyright</div>
+<p>&#169; Copyright Schemelab Hackers, Inc</p>
+<div class="title">M-x asciidoc-trademark</div>
+<p>&#8482; Scheme prior to the R6RS mess</p>
+<div class="title">M-x asciidoc-registered-trademark</div>
+<p>&#174; Registered, signed, sealed, delivered pizza. Delicious.</p>
+</div>
+<h2>5. Block Actions</h2>
+<div class="sectionbody">
+<h3><a id="typical-blockid"></a>5.1. BlockId Element</h3>
+<p>These are placed just above a block that you want to reference later using the
+`<a href="#blockid">descriptive text</a>' convention.</p>
+<p>While we are here, we may as well point out <tt>asciidoc-block-reference</tt>, which is
+used to refer to these <tt>BlockIds</tt> that you set up.</p>
+</div>
+<h2>6. Delimited Blocks</h2>
+<div class="sectionbody">
+<h3>6.1. Listing block</h3>
+<div class="listingblock">
+<div class="title">Example: M-x asciidoc-listing-block</div>
+<div class="content">
+<pre><tt>(defun fun()
+  (progn
+    (play in-the-sand)
+    (play in-the-band)
+    (play at-the-beach)
+    (play with-the-beets) ; sorry it had to rhyme
+   ))</tt></pre>
+</div></div>
+<h3>6.2. Literal block</h3>
+<p>This appears to be best when prefaced with the verse style.</p>
+<div class="verseblock">
+<div class="title">M-x asciidoc-literal-block</div>
+<div class="content">Consul <strong>necessitatibus</strong> per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+
+Qui in magna commodo, est labitur
+dolorum an. Est ne <strong>magna primis
+adolescens</strong>.</div></div>
+<h3>6.3. Sidebar Block</h3>
+<div class="sidebarblock">
+<div class="sidebar-content">
+<div class="sidebar-title">M-x asciidoc-sidebar-block</div>
+<p>Looks just like a note to me.
+But of course it does not have the word &#8220;NOTE&#8221; in front of it&#8230; caveat emptor.</p>
+</div></div>
+<h3>6.4. Comment Block</h3>
+<h3>6.5. Passthrough Blocks</h3>
+<div class="literalblock">
+<div class="content">
+<pre><tt>m-x asciidoc-passthru-* brings them up. I have no use for them.</tt></pre>
+</div></div>
+<h3>6.6. Quotations</h3>
+<p>Via <tt>M-x asciidoc-quotation-block</tt></p>
+<div class="quoteblock">
+<div class="quoteblock-content">
+<p>Lisp is for building organisms &#8212; imposing, breathtaking, dynamic structures built by squads fitting fluctuating myriads of simpler organisms into place.</p>
+<div class="attribution">
+<span class="emphasis">Foreward to Structure and Intepretation of Computer Programs</span><br />
+&#8212; Alan Perlis
+</div></div></div>
+<p>You have to manually place 4 periods within your quotation block if you want
+a poem or something. The manual shows how to do this.</p>
+<div class="quoteblock">
+<div class="quoteblock-content">
+<div class="verseblock">
+<div class="content">To see a world in a grain of sand,
+And a heaven in a wild flower,
+Hold infinity in the palm of your hand,
+And eternity in an hour.</div></div>
+<div class="attribution">
+<span class="emphasis">Auguries of Innocence</span><br />
+&#8212; William Blake
+</div></div></div>
+<h3>6.7. Example blocks</h3>
+<p>Most people (myself included) went flying through the Asciidoc manual and
+never took time to see the Example block. We were manually coding such a
+best ourself over and over. Well, worry no longer because
+<tt>M-x asciidoc-example-block</tt> brings it to your fingertips.</p>
+<div class="exampleblock">
+<div class="title">Example: Here we use the J Console to add up our monthly income</div>
+<div class="exampleblock-content">
+<div class="literalblock">
+<div class="content">
+<pre><tt>  2+2
+4</tt></pre>
+</div></div>
+</div></div>
+</div>
+<h2>7. Lists</h2>
+<div class="sectionbody">
+<h3>7.1. Bulleted List</h3>
+<p><tt>M-x asciidoc-bullet-item</tt> is the ticket.</p>
+<div class="title">Shopping List</div><ul>
+<li>
+<p>
+Eggs
+</p>
+</li>
+<li>
+<p>
+Bacon
+</p>
+<ul>
+<li>
+<p>
+Living
+</p>
+</li>
+<li>
+<p>
+Loving
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+Snicker's Bar
+</p>
+</li>
+</ul>
+<h3>7.2. Numbered List</h3>
+<p><tt>M-x asciidoc-numbered-list-item</tt> is the ticket.</p>
+<ol>
+<li>
+<p>
+Wake up
+</p>
+</li>
+<li>
+<p>
+Look at clock
+</p>
+<ol class="olist2">
+<li>
+<p>
+Pray it is still time to sleep
+</p>
+</li>
+</ol>
+</li>
+<li>
+<p>
+Realize it's Saturday
+</p>
+</li>
+<li>
+<p>
+Wake up and hack on favorite projects
+</p>
+</li>
+</ol>
+<h3><a id="LL"></a>7.3. Labelled lists</h3>
+<p>Only vertically labelled lists are supplied here. The horizontal ones look nice,
+and you can get them by simply putting the text following the <tt>::</tt> on the same
+line.</p>
+<p><tt>M-x asciidoc-labelled-list-item</tt> will set you free.</p>
+<dl>
+<dt>
+Lorem
+</dt>
+<dd>
+<p>
+    the gypsy was ipsum on the frothy mug
+</p>
+</dd>
+<dt>
+Gypsum
+</dt>
+<dd>
+<p>
+    the fifth one was just one below the sixth one
+</p>
+</dd>
+</dl>
+</div>
+<h2>8. Bibliography Items</h2>
+<div class="sectionbody">
+<p><tt>M-x asciidoc-bibliography-item</tt></p>
+<ol>
+<li>
+<p>
+<a id="taoup"></a>[taoup] Eric S. Raymond. <em>The art of Unix Programming</em>.
+</p>
+</li>
+</ol>
+</div>
+<h2>9. Linkage</h2>
+<div class="sectionbody">
+<h3>9.1. Hyperlinks</h3>
+<div class="title">M-x asciidoc-href</div>
+<p>Whenever you want <a href="http://www.Perl.com">Perl</a>
+consulting services, be sure to contact <a href="http://www.metaperl.com">the best</a>.</p>
+<h4>9.1.1. Relative URLS</h4>
+<div class="title">M-x asciidoc-relative-href</div>
+<p>Download a <a href="img/pix/mom/200.jpeg">picture of my mom</a>
+right here!</p>
+<h4>9.1.2. Images</h4>
+<div class="title">M-x asciidoc-image-href</div>
+<p><span class="image">
+<a class="image" href="http://keiapl.info">
+<img src="http://keiapl.info/rhui/kei20040905.jpg" alt="The last photograph of Ken Iverson" title="The last photograph of Ken Iverson" height="50" />
+</a>
+</span></p>
+<p>This function only aids in basic usage of Asciidoc's <tt>image</tt> macro. You will
+have to add the <tt>height</tt>, <tt>width</tt>, and <tt>link</tt> attributes yourself if you want
+them.</p>
+<h3>9.2. Internal Document References</h3>
+<p>You create document anchors with <tt>M-x asciidoc-block-id-element</tt>.
+You refer to them using <tt>M-x asciidoc-block-reference</tt>.</p>
+<p>Just above "Labelled Lists" above, I created a document anchor <tt><a id="LL"></a></tt>. Now,
+in the next paragraph I refer to it:</p>
+<p>Here is <a href="#LL">Cool J</a> at your service.</p>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 05-Sep-2007 21:09:07 EDT
+</div>
+</div>
+</body>
+</html>

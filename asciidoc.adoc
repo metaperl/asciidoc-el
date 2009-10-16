@@ -1,0 +1,262 @@
+asciidoc.el - asciidoc functions for Emacs
+==========================================
+Terrence Brannon <bauhaus@metaperl.com>
+09/03/07
+
+
+== Get Started
+
+`M-x asciidoc-get-started` will insert the document header stuff for you.
+
+== Run asciidoc
+
+`M-x asciidoc-compile` will supply you with an editable command line to be 
+supplied to the shell. After that you can simply type `M-x recompile` to build 
+your document each time.
+
+
+== Sections
+
+Sections are entered with `asciidoc-section-title`. You enter a
+number indicating the number of equals signs you want. And then
+you enter the section title.
+
+I'm sorry that I cannot two-line titles. The main reason is that I
+think it is much more flexible to just be able to remove an equals
+sign to change level rather than try to keep all the various underline
+semantics in my head.
+
+
+== Text Formatting
+
+
+=== Emphasized text
+
+`M-x asciidoc-emphasized RET You must mop the floor now!` will result
+in _You must mop the floor now!_ Which is just what we need in this house.
+
+=== Strong (bold) text
+ 
+`M-x asciidoc-strong RET My name is Hercules` yields *My name is Hercules* and that is strong enough for the best of us.
+ 
+=== Monospaced text
+
+`M-x asciidoc-monospace RET Welcome to nerdville` produces `Welcome to
+nerdville` and that is boring enough for the rest of us.
+
+=== Quoted text
+
+`M-x asciidoc-quoted RET Let's get physical` brings us ``Let's get physical'' and who could ask for more?
+
+=== Unquoted text
+
+`M-x asciidoc-unquoted RET who needs this?` yields #who needs this?#
+
+=== Superscripted text
+
+Normal and then `M-x asciidoc-superscript RET super text RET M-x asciidoc-subscript down text RET` yields:
+
+.Result
+Normal and then ^super text^ Jules Verne ~under the sea~
+
+=== Copyright, Trademark.
+
+.M-x asciidoc-copyright
+(C) Copyright Schemelab Hackers, Inc
+
+.M-x asciidoc-trademark
+(TM) Scheme prior to the R6RS mess
+
+.M-x asciidoc-registered-trademark
+(R) Registered, signed, sealed, delivered pizza. Delicious.
+
+== Block Actions
+
+[[typical-blockid]]
+
+=== BlockId Element
+
+These are placed just above a block that you want to reference later using the 
+`<<blockid,descriptive text>>' convention.
+
+While we are here, we may as well point out `asciidoc-block-reference`, which is 
+used to refer to these `BlockIds` that you set up.
+
+
+== Delimited Blocks
+
+=== Listing block
+
+.M-x asciidoc-listing-block
+------------------------------------------------------------------------------
+(defun fun()
+  (progn
+    (play in-the-sand)
+    (play in-the-band)    
+    (play at-the-beach)    
+    (play with-the-beets) ; sorry it had to rhyme
+   ))
+------------------------------------------------------------------------------
+
+=== Literal block
+
+This appears to be best when prefaced with the verse style.
+
+.M-x asciidoc-literal-block
+
+[verse]
+..............................................................................
+Consul *necessitatibus* per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+
+Qui in magna commodo, est labitur
+dolorum an. Est ne *magna primis
+adolescens*.
+..............................................................................
+
+=== Sidebar Block
+
+
+.M-x asciidoc-sidebar-block
+******************************************************************************
+Looks just like a note to me.
+But of course it does not have the word ``NOTE'' in front of it... caveat emptor.
+******************************************************************************
+
+
+=== Comment Block
+
+.M-x asciidoc-comment-block
+//////////////////////////////////////////////////////////////////////////////
+ignore this text
+//////////////////////////////////////////////////////////////////////////////
+
+
+=== Passthrough Blocks
+
+ m-x asciidoc-passthru-* brings them up. I have no use for them.
+
+=== Quotations
+
+Via `M-x asciidoc-quotation-block`
+
+[attribution="Alan Perlis",citetitle="Foreward to Structure and Intepretation of Computer Programs"]
+______________________________________________________________________________
+Lisp is for building organisms -- imposing, breathtaking, dynamic structures built by squads fitting fluctuating myriads of simpler organisms into place. 
+______________________________________________________________________________
+
+
+You have to manually place 4 periods within your quotation block if you want
+a poem or something. The manual shows how to do this.
+
+
+[attribution="William Blake",citetitle="Auguries of Innocence"]
+______________________________________________________________________________
+[verse]
+....
+To see a world in a grain of sand,
+And a heaven in a wild flower,
+Hold infinity in the palm of your hand,
+And eternity in an hour.
+....
+______________________________________________________________________________
+
+
+=== Example blocks
+
+Most people (myself included) went flying through the Asciidoc manual and 
+never took time to see the Example block. We were manually coding such a
+best ourself over and over. Well, worry no longer because
+`M-x asciidoc-example-block` brings it to your fingertips.
+
+[caption="Example: "]
+.Here we use the J Console to add up our monthly income
+==============================================================================
+  2+2
+4
+==============================================================================
+
+
+== Lists
+
+=== Bulleted List
+
+`M-x asciidoc-bullet-item` is the ticket. 
+
+.Shopping List
+- Eggs
+- Bacon
+    * Living
+    * Loving
+- Snicker's Bar
+
+=== Numbered List
+
+`M-x asciidoc-numbered-list-item` is the ticket. 
+
+. Wake up
+. Look at clock
+    .. Pray it is still time to sleep
+. Realize it's Saturday
+. Wake up and hack on favorite projects
+
+[[LL]]
+=== Labelled lists
+
+Only vertically labelled lists are supplied here. The horizontal ones look nice,
+and you can get them by simply putting the text following the `::` on the same 
+line.
+
+`M-x asciidoc-labelled-list-item` will set you free.
+
+Lorem::
+    the gypsy was ipsum on the frothy mug
+
+Gypsum::
+    the fifth one was just one below the sixth one
+
+== Bibliography Items
+
+`M-x asciidoc-bibliography-item`
+
++ [[[taoup]]] Eric S. Raymond. 'The art of Unix Programming'. 
+
+== Linkage
+
+=== Hyperlinks
+
+.M-x asciidoc-href
+
+Whenever you want http://www.Perl.com[Perl]
+consulting services, be sure to contact http://www.metaperl.com[the best].
+
+==== Relative URLS
+
+.M-x asciidoc-relative-href
+
+Download a link:img/pix/mom/200.jpeg[picture of my mom]
+right here!
+
+==== Images
+
+.M-x asciidoc-image-href
+
+image:http://keiapl.info/rhui/kei20040905.jpg["The last photograph of Ken Iverson",link="http://keiapl.info",height=200]
+
+
+This function only aids in basic usage of Asciidoc's `image` macro. You will 
+have to add the `height`, `width`, and `link` attributes yourself if you want 
+them. 
+
+=== Internal Document References
+
+You create document anchors with `M-x asciidoc-block-id-element`.
+You refer to them using `M-x asciidoc-block-reference`.
+
+Just above "Labelled Lists" above, I created a document anchor `[[LL]]`. Now, 
+in the next paragraph I refer to it:
+
+Here is <<LL,Cool J>> at your service.
+
+
