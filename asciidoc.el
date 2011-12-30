@@ -1,6 +1,6 @@
 ;;; asciidoc.el --- asciidoc text file development support
 
-;; Copyright (C) 2007 Terrence Brannon <bauhaus@metaperl.com>
+;; Copyright (C) 2011 Terrence Brannon <metaperl@gmail.com>
 
 ;; Author: Terrence Brannon <bauhaus@metaperl.com>
 ;; Created: 21 Sept 2007
