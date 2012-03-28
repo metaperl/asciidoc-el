@@ -130,12 +130,6 @@
   (insert
    (concat "$$" text "$$")))
 
-(defun asciidoc-passthru-double-dollar (text)
-  "Insert TEXT with asciidoc double-dollar formatting."
-  (interactive "sText to be formatted for no change except escaping special characters: ")
-  (insert
-   (concat "$$" text "$$")))
-
 (defun asciidoc-superscript (text)
   "Insert TEXT with asciidoc superscript formatting."
   (interactive "sText to be formatted for superscripting: ")
@@ -415,7 +409,6 @@
 (easy-menu-define
   asciidoc-global-menu global-map "" asciidoc-global-menuspec)
 
-(provide 'asciidoc)
 (provide 'asciidoc)
 
 ;;; asciidoc.el ends here
