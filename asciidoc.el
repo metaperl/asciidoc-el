@@ -27,7 +27,7 @@
 
 
 ;;; Commentary:
-;; 
+;;
 
 ;; Suggested add-ons:
 ;; doc-mode: font-locking for asciidoc buffers
@@ -52,7 +52,7 @@
 
 ;;; Code:
 
-(setq debug-on-error t)
+;(setq debug-on-error t)
 
 
 (require 'easymenu)
