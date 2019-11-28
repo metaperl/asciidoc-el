@@ -141,7 +141,7 @@ ignore this text
 
 Via `M-x asciidoc-quotation-block`
 
-[attribution="Alan Perlis",citetitle="Foreward to Structure and Intepretation of Computer Programs"]
+[attribution="Alan Perlis",citetitle="Foreword to Structure and Interpretation of Computer Programs"]
 ______________________________________________________________________________
 Lisp is for building organisms -- imposing, breathtaking, dynamic structures built by squads fitting fluctuating myriads of simpler organisms into place. 
 ______________________________________________________________________________
